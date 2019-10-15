@@ -1,0 +1,6 @@
+C:\Users\lenovo\source\repos\Model\bin\Debug\Model.dll
+C:\Users\lenovo\source\repos\Model\bin\Debug\Model.pdb
+C:\Users\lenovo\source\repos\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\lenovo\source\repos\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\lenovo\source\repos\Model\obj\Debug\Model.dll
+C:\Users\lenovo\source\repos\Model\obj\Debug\Model.pdb

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Model.Filmes>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.duracao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ano)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.classificacao_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.produtora_id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.titulo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duracao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ano)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.classificacao_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.produtora_id)
+        </td>
+        <td>
+            <button class="btn btn-danger">@Html.ActionLink("Edit", "Edit", new { id = item.id })</button>
+
+            @Html.ActionLink("Details", "Details", new { id = item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                Buscar
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form action="Filme/buscar" method="GET">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Digite o id desejado</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input class="form-control" name="id" value="" placeholder="Fiagite aqui o ID"/>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+}
+
+</table>
