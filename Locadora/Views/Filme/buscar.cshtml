@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Model.Filmes>
+﻿@model Model.Filmes
 
 @{
     ViewBag.Title = "Buscar";
@@ -19,16 +19,13 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
             <tr>
-                <th scope="row">@Html.DisplayFor(modelItem => item.titulo)</th>
-                <td>@Html.DisplayFor(modelItem => item.duracao)</td>
-                <td>@Html.DisplayFor(modelItem => item.ano)</td>
-                <td>@Html.DisplayFor(modelItem => item.classificacao_id)</td>
-                <td>@Html.DisplayFor(modelItem => item.produtora_id)</td>
+                <th scope="row">@Html.DisplayFor(modelItem => Model.titulo)</th>
+                <td>@Html.DisplayFor(modelItem => Model.duracao)</td>
+                <td>@Html.DisplayFor(modelItem => Model.ano)</td>
+                <td>@Html.DisplayFor(modelItem => Model.classificacao_id)</td>
+                <td>@Html.DisplayFor(modelItem => Model.produtora_id)</td>
             </tr>
-        }
     </tbody>
 </table>
 

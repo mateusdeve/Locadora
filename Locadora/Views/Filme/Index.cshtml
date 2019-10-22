@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button class="btn btn-success"  data-toggle="modal" data-target="#exampleModal">Novo Filme</button>
 </p>
 <table class="table">
     <tr>
@@ -52,9 +52,13 @@
             @Html.ActionLink("Details", "Details", new { id = item.id }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.id })
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            @*<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Buscar
+        </button>*@
+
+            <a class="btn btn-primary" href="/Filme/Buscar/@item.id">
                 Buscar
-            </button>
+            </a>
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -68,7 +72,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <input class="form-control" name="id" value="" placeholder="Fiagite aqui o ID"/>
+                                <input class="form-control" name="id" value="" placeholder="Fiagite aqui o ID" />
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
